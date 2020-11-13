@@ -6,7 +6,7 @@ module Postmark
     def to_postmark(message = {})
       message = message.dup
 
-      %w(from to reply_to cc bcc).each do |field|
+      %w(to reply_to cc bcc).each do |field|
         message[field.to_sym] = Array[*message[field.to_sym]].join(", ")
       end
 
